@@ -1,0 +1,44 @@
+<p>portfolio works!</p>
+<h1> My Portfolio</h1>
+<h3>Welcome {{this.userService.loginusername}}</h3>
+
+<form [formGroup]="portfolieFormRef" (ngSubmit)="portfolieclick()">
+  <table>
+     <tr>
+       <td>
+          <table>
+              <tr>
+                <th>Contact Name :</th>
+                <td><input type="text" formControlName="name"></td>
+              </tr>
+              <tr>
+                <th>Phno:</th>
+                <td><input type="number" formControlName="phno"></td>
+              </tr>
+              <tr >
+
+              </tr>
+            </table>
+
+       </td>
+       <td>
+         <input type="submit" value="save">
+       </td>
+     </tr>
+  </table>
+</form>
+
+<table>
+  <tr>
+    <th colspan="2">Contact Details</th>
+
+  </tr>
+  <tr>
+    <th>Name </th>
+    <th>Phone No.</th>
+  </tr>
+  <tr *ngFor="let data of portfoliearray">
+    <td>{{data.name}}</td>
+    <td>{{data.phno}}</td>
+  </tr>
+</table>
